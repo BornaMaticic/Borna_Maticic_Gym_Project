@@ -9,6 +9,7 @@ get '/members' do
 end
 
 get '/members/new' do
+  @sessions = Session.all
   erb(:"members/new")
 end
 
