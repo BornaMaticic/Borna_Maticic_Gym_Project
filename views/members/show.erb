@@ -1,0 +1,7 @@
+<h1><%= @member.first_name %> (member)</h1>
+
+<p>Tier <%= @member.tier %></p>
+
+
+<form action="/members/<%= @member.id %>/edit" method="GET"><input type="submit" value="Edit"></form>
+<form action="/members/<%= @member.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

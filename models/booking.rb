@@ -60,6 +60,13 @@ class Booking
     SqlRunner.run( sql, values )
   end
 
-
+def self.find(id)
+  sql = "SELECT * FROM bookings
+  WHERE id = $1"
+  values = [id]
+  result = SqlRunner.run(sql, values).first
+  booking = Booking.new(result)
+  return booking
+end
 
 end

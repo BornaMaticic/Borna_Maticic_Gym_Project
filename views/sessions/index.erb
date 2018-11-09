@@ -1,0 +1,16 @@
+<h1>Sessions</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Tier</th>
+  </tr>
+  <% for session in @sessions %>
+  <tr>
+    <td><a href="/sessions/<%= session.id %>"><%= session.session_name %></a></td>
+    <td>|</td>
+    <td><%= session.tier %></td>
+  </tr>
+  <% end %>
+</table>

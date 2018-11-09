@@ -52,6 +52,14 @@ class Member
       SqlRunner.run(sql, values)
     end
 
+    def self.map_items(member_data)
+        return member_data.map { |member| Member.new(member) }
+      end
+
+      def format_name
+    return "#{@first_name.capitalize} #{@last_name.capitalize}"
+  end
+
 
   def session()
     sql = "SELECT s.* FROM sessions s INNER JOIN bookings b ON b.session_id = s.id WHERE b.member_id = $1;"

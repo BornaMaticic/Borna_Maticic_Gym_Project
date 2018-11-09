@@ -1,0 +1,20 @@
+<h1>Members</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th>Tier</th>
+  </tr>
+  <% for member in @members %>
+  <tr>
+    <td><a href="/members/<%= member.id %>"><%= member.first_name %></a></td>
+    <td>|</td>
+    <td><%= member.tier %></td>
+  </tr>
+  <% end %>
+</table>
+<br>
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/members/new">Add new member</a>
+</p>
