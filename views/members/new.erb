@@ -12,7 +12,14 @@
       <input type="text" name="last_name" id="last_name"/>
     </div>
 
-   
+    <div class="form-el">
+      <label for="session_select">Select Session:</label>
+      <select name="session_id" id="session_select">
+        <% @sessions.each do |session| %>
+            <option value=<%= session.id %>><%= session.session_name.capitalize %></option>
+        <% end %>
+      </select>
+    </div>
 
 
     <div class="form-el">
