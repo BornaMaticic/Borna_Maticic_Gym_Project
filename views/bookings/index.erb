@@ -7,7 +7,7 @@
 <ul>
   <% for booking in @bookings %>
   <li>
-  <p><%= booking.session.session_name %> <%= booking.member.first_name %> </p>
+  <p><%= booking.session.session_name %> <%= booking.member.format_name %> </p>
     <p>
       <form action="/bookings/<%= booking.id %>/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="delete" />

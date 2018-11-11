@@ -1,4 +1,4 @@
-<h2>Edit <%= @member.first_name %></h2>
+<h2>Edit <%= @member.format_name %></h2>
 <form method="POST" action="/members/<%= @member.id %>">
   <div class="form-wrapper">
 
@@ -12,7 +12,7 @@
       <input type="text" name="last_name" id="last_name" value="<%= @member.last_name%>"/>
     </div>
 
-    
+
 
     <div class="form-el">
       <input type="submit" value="Edit member"/>
