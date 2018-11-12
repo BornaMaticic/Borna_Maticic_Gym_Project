@@ -1,16 +1,23 @@
 <h1>Sessions</h1>
+<br>
 
 <table>
   <tr>
     <th>Name</th>
     <th></th>
-    <th>Tier</th>
+    <th>Session Time</th>
   </tr>
   <% for session in @sessions %>
   <tr>
     <td><a href="/sessions/<%= session.id %>"><%= session.session_name %></a></td>
     <td>|</td>
-    <td><%= session.tier %></td>
+    <td><%= session.session_time %></td>
   </tr>
   <% end %>
 </table>
+<br>
+<br>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/sessions/new">Create new session</a>
+</p>

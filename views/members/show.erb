@@ -1,9 +1,9 @@
 
-<h1><%= @member.id %> (ID)</h1>
+<h1>Member ID - <%= @member.id %></h1>
 
-<h1><%= @member.format_name %> (member)</h1>
+<h1><%= @member.format_name %></h1>
 
-<p>Tier <%= @member.tier %></p>
+<p>Membership Type <%= @member.membership_type %></p>
 
 
 <form action="/members/<%= @member.id %>/edit" method="GET"><input type="submit" value="Edit"></form>

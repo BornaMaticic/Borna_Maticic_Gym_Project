@@ -1,0 +1,9 @@
+<h1>Member ID - <%= @booking.id %></h1>
+
+<h1><%= @booking.format_name %></h1>
+
+<p>Membership Type <%= @booking.membership_type %></p>
+
+
+<form action="/bookings/<%= @booking.id %>/edit" method="GET"><input type="submit" value="Edit"></form>
+<form action="/bookings/<%= @booking.id %>/delete" method="POST"><input type="submit" value="Delete"></form>

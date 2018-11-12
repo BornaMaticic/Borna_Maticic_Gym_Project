@@ -1,11 +1,17 @@
 <h1>Session <%= @session.session_name %></h1>
 
-<p>Tier: <%= @session.tier %></p>
+<form action="/sessions/<%= session.id %>/delete" method="POST">
+  <input class="btn btn--danger" type="submit" value="delete" />
+</form>
+
+
+<p>Membership Type: <%= @session.membership_type %></p>
 
 <h3>Members:</h3>
 
 <ul>
   <% @session.member.each do |member| %>
-  <li><%= member.first_name %></li>
+  <li><%= member.format_name %></li>
   <% end %>
 </ul>
+<br>

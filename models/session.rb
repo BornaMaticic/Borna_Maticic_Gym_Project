@@ -2,13 +2,13 @@ require_relative( '../db/sql_runner' )
 
 class Session
 
-  attr_reader( :session_name, :session_time, :tier, :id )
+  attr_reader( :session_name, :session_time, :membership_type, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @session_name = options['session_name']
     @session_time = options['session_time']
-    @tier = options['tier']
+    @membership_type = options['membership_type']
   end
 
   def save()
@@ -16,14 +16,14 @@ class Session
     (
       session_name,
       session_time,
-      tier
+      membership_type
     )
     VALUES
     (
       $1, $2, $3
     )
     RETURNING id"
-    values = [@session_name, @session_time, @tier]
+    values = [@session_name, @session_time, @membership_type]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -34,13 +34,13 @@ class Session
       (
         session_name,
         session_time,
-        tier
+        membership_type
       ) =
       (
         $1, $2, $3
       )
       WHERE id = $4"
-      values = [@session_name, @session_time, @tier, @id]
+      values = [@session_name, @session_time, @membership_type, @id]
       SqlRunner.run(sql, values)
     end
 
@@ -55,7 +55,7 @@ class Session
         return session_data.map { |session| Session.new(session) }
       end
 
-  def members
+  def member
     sql = "SELECT m.* FROM members m INNER JOIN bookings b ON b.member_id = m.id WHERE b.session_id = $1;"
     values = [@id]
     results = SqlRunner.run(sql, values)

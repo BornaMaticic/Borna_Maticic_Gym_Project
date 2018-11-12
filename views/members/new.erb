@@ -13,12 +13,11 @@
     </div>
 
   <br>
-  
       <label>
-      Select a session:
+      Select a Membership:
         <select name="session_id">
           <% for session in @sessions %>
-          <option value="<%= session.id %>"><%= session.session_name %></option>
+          <option value="<%= session.id %>"><%= session.membership_type %></option>
           <% end %>
         </select>
       </label>
