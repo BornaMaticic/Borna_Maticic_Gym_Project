@@ -4,6 +4,7 @@ DROP TABLE members;
 
 
 
+
 CREATE TABLE members
 (
   id SERIAL8 primary key,
@@ -18,7 +19,8 @@ CREATE TABLE sessions
   id SERIAL8 primary key,
   session_name VARCHAR(255),
   session_time VARCHAR(255),
-  membership_type VARCHAR(255)
+  membership_type VARCHAR(255),
+  capacity VARCHAR(255)
 );
 
 

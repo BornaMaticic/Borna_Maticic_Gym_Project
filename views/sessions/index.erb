@@ -6,12 +6,16 @@
     <th>Name</th>
     <th></th>
     <th>Session Time</th>
+    <th></th>
+    <th>Session Availability</th>
   </tr>
   <% for session in @sessions %>
   <tr>
     <td><a href="/sessions/<%= session.id %>"><%= session.session_name %></a></td>
     <td>|</td>
     <td><%= session.session_time %></td>
+    <td>| <br></td>
+    <td><%= session.remaining_spaces %></td>
   </tr>
   <% end %>
 </table>

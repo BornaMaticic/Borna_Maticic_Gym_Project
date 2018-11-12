@@ -12,7 +12,7 @@ end
 
 get '/bookings/new' do
   @members = Member.all
-  @sessions = Session.all
+  @sessions = Session.available_sessions
   erb(:"bookings/new")
 end
 

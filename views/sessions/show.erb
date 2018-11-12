@@ -12,6 +12,7 @@
 <p>Membership Type: <%= @session.membership_type %></p>
 
 
+
 <form action="/sessions/<%= @session.id %>/edit" method="GET"><input type="submit" value="Edit"></form>
 
 <form action="/sessions/<%= @session.id %>/delete" method="POST">
