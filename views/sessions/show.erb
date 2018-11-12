@@ -1,6 +1,13 @@
 <h1>Session <%= @session.session_name %></h1>
 
+<h3>Members:</h3>
 
+<ul>
+<% @session.member.each do |member| %>
+<li><%= member.format_name %></li>
+<% end %>
+</ul>
+<br>
 
 <p>Membership Type: <%= @session.membership_type %></p>
 

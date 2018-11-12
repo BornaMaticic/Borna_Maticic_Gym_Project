@@ -65,10 +65,14 @@ class Member
     def session_name()
       sql = "SELECT s.* FROM sessions s INNER JOIN bookings b ON b.session_id = s.id WHERE b.member_id = $1;"
       values = [@id]
-      array_with_one_hash = SqlRunner.run(sql, values)
-      hash = array_with_one_hash[0]
-      return hash['session_name']
-end
+      session_array = SqlRunner.run(sql, values).to_a
+      if session_array.length > 0
+        session = session_array[0]
+        return session ['session_name']
+      else
+        return "No session booked."
+      end
+    end
 
     def session()
       sql = "SELECT s.* FROM sessions s INNER JOIN bookings b ON b.session_id = s.id WHERE b.member_id = $1;"

@@ -81,6 +81,8 @@ class Session
     SqlRunner.run( sql )
   end
 
-
+def count_members
+  Member.all.count
+end
 
 end
