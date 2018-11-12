@@ -85,7 +85,7 @@ class Session
     end
 
     def members_count
-      Member.all.count
+      member.count
     end
 
     def session_full?
