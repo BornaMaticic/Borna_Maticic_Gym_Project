@@ -63,11 +63,12 @@ class Member
 
 
     def session_name()
-      sql = "SELECT s.session_name FROM sessions s INNER JOIN bookings b ON b.session_id = s.id WHERE b.member_id = $1;"
+      sql = "SELECT s.* FROM sessions s INNER JOIN bookings b ON b.session_id = s.id WHERE b.member_id = $1;"
       values = [@id]
-      results = SqlRunner.run(sql, values)
-      return results.map { |session| Session.new(session) }
-    end
+      array_with_one_hash = SqlRunner.run(sql, values)
+      hash = array_with_one_hash[0]
+      return hash['session_name']
+end
 
     def session()
       sql = "SELECT s.* FROM sessions s INNER JOIN bookings b ON b.session_id = s.id WHERE b.member_id = $1;"
