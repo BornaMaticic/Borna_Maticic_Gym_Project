@@ -1,5 +1,6 @@
 require_relative( '../db/sql_runner' )
 
+
 class Member
 
   attr_reader( :first_name, :last_name, :membership_type, :id )
@@ -53,20 +54,27 @@ class Member
     end
 
     def self.map_items(member_data)
-        return member_data.map { |member| Member.new(member) }
-      end
+      return member_data.map { |member| Member.new(member) }
+    end
 
-      def format_name
-    return "#{@first_name.capitalize} #{@last_name.capitalize}"
-  end
+    def format_name
+      return "#{@first_name.capitalize} #{@last_name.capitalize}"
+    end
 
 
-  def session()
-    sql = "SELECT s.* FROM sessions s INNER JOIN bookings b ON b.session_id = s.id WHERE b.member_id = $1;"
-    values = [@id]
-    results = SqlRunner.run(sql, values)
-    return results.map { |session| Session.new(session) }
-  end
+    def session_name()
+      sql = "SELECT s.session_name FROM sessions s INNER JOIN bookings b ON b.session_id = s.id WHERE b.member_id = $1;"
+      values = [@id]
+      results = SqlRunner.run(sql, values)
+      return results.map { |session| Session.new(session) }
+    end
+
+    def session()
+      sql = "SELECT s.* FROM sessions s INNER JOIN bookings b ON b.session_id = s.id WHERE b.member_id = $1;"
+      values = [@id]
+      results = SqlRunner.run(sql, values)
+      return results.map { |session| Session.new(session) }
+    end
 
   def self.all()
     sql = "SELECT * FROM members"

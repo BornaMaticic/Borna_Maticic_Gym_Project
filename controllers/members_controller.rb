@@ -31,6 +31,11 @@ get '/members/:id/edit' do
   erb(:"members/edit")
 end
 
+get '/members/:id/edit' do
+  @member = Member.find(params[:membership_type])
+  erb(:"members/edit")
+end
+
 post '/members/:id' do
   member = Member.new(params)
   member.update

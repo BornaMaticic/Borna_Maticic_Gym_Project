@@ -15,10 +15,10 @@
   <br>
       <label>
       Select a Membership:
-        <select name="session_id">
-          <% for session in @sessions %>
-          <option value="<%= session.id %>"><%= session.membership_type %></option>
-          <% end %>
+        <select class="" name="membership_type">
+          <option value="Basic">Basic</option>
+          <option value="Gold">Gold</option>
+          <option value="Platinum">Platinum</option>
         </select>
       </label>
 

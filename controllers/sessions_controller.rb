@@ -14,7 +14,7 @@ end
 
 
 get '/sessions/:id' do
-  @session = Session.find(params['id'].to_i)
+  @session = Session.find(params[:id].to_i)
   erb(:"sessions/show")
 end
 
@@ -28,9 +28,10 @@ end
 
 
 get '/sessions/:id/edit' do
-  @sessions = Session.find(params[:id])
+  @session = Session.find(params[:id])
   erb(:"sessions/edit")
 end
+
 
 post '/sessions/:id' do
   session = Session.new(params)
