@@ -2,7 +2,7 @@ require_relative( '../db/sql_runner' )
 
 class Session
 
-  attr_reader( :session_name, :session_time, :membership_type, :capacity, :id )
+  attr_reader( :session_name, :session_time, :membership_type, :capacity,:instructor_id, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -10,6 +10,7 @@ class Session
     @session_time = options['session_time']
     @membership_type = options['membership_type']
     @capacity = options['capacity'].to_i
+    @instructor_id = options['instructor_id'].to_i
   end
 
   def save()
@@ -18,14 +19,15 @@ class Session
       session_name,
       session_time,
       membership_type,
-      capacity
+      capacity,
+      instructor_id
     )
     VALUES
     (
-      $1, $2, $3, $4
+      $1, $2, $3, $4, $5
     )
     RETURNING id"
-    values = [@session_name, @session_time, @membership_type, @capacity]
+    values = [@session_name, @session_time, @membership_type, @capacity, @instructor_id]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -37,13 +39,14 @@ class Session
       session_name,
       session_time,
       membership_type,
-      capacity
+      capacity,
+      instructor_id
       ) =
       (
-        $1, $2, $3, $4
+        $1, $2, $3, $4, $5
       )
-      WHERE id = $5"
-      values = [@session_name, @session_time, @membership_type, @capacity, @id]
+      WHERE id = $6"
+      values = [@session_name, @session_time, @membership_type, @capacity,@instructor_id, @id]
       SqlRunner.run(sql, values)
     end
 
@@ -64,6 +67,31 @@ class Session
       results = SqlRunner.run(sql, values)
       return results.map { |member| Member.new(member) }
     end
+
+    def instructor()
+      sql = "SELECT * FROM instructors
+      WHERE id = $1"
+      values = [@instructor_id]
+      results = SqlRunner.run( sql, values )
+      return Session.new( results.first )
+    end
+
+
+    def session_instructor()
+      sql = "SELECT instructors.name FROM instructors
+      INNER JOIN sessions
+      ON sessions.instructor_id = instructors.id
+      WHERE sessions.id = $1"
+      values = [@id]
+      session_array = SqlRunner.run(sql, values).to_a
+      if session_array.length > 0
+        session = session_array[0]
+        return session['name']
+      else
+        return "No session booked."
+      end
+    end
+
 
     def self.all()
       sql = "SELECT * FROM sessions"

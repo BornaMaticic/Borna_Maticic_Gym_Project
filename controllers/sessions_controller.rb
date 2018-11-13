@@ -9,6 +9,7 @@ get '/sessions' do
 end
 
 get '/sessions/new' do
+  @instructors = Instructor.all
   erb(:"sessions/new")
 end
 
@@ -28,6 +29,7 @@ end
 
 
 get '/sessions/:id/edit' do
+  @instructor = Instructor.find(params[:id])
   @session = Session.find(params[:id])
   erb(:"sessions/edit")
 end

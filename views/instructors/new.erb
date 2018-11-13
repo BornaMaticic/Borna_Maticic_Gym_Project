@@ -1,0 +1,27 @@
+<h2>New Instructor</h2>
+<form method="POST" action="/instructors">
+  <div class="form-wrapper">
+
+    <div class="form-el">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name"/>
+    </div>
+
+  <br>
+      <label>
+        Select a session:
+          <select name="session_id">
+            <% for session in @sessions %>
+            <option value="<%= session.id %>"><%= session.session_name %></option>
+            <% end %>
+          </select>
+        </label>
+
+
+
+    <div class="form-el">
+      <input type="submit" value="Add instructor"/>
+    </div>
+
+  </div>
+</form>

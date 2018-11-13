@@ -1,6 +1,7 @@
 DROP TABLE bookings;
 DROP TABLE sessions;
 DROP TABLE members;
+DROP TABLE instructors;
 
 
 
@@ -14,13 +15,21 @@ CREATE TABLE members
 );
 
 
+CREATE TABLE instructors
+(
+  id SERIAL8 primary key,
+  name VARCHAR(255)
+);
+
+
 CREATE TABLE sessions
 (
   id SERIAL8 primary key,
   session_name VARCHAR(255),
   session_time VARCHAR(255),
   membership_type VARCHAR(255),
-  capacity VARCHAR(255)
+  capacity VARCHAR(255),
+  instructor_id INT8 references instructors(id) ON DELETE CASCADE
 );
 
 

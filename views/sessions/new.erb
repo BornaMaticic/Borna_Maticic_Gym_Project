@@ -12,6 +12,19 @@
       <input type="text" name="session_time" id="session_time"/>
     </div>
 
+    <div class="form-el">
+      <label for="capacity">Session Capacity:</label>
+      <input type="text" name="capacity" id="capacity" />
+    </div>
+<br>
+    Select Instructor:
+    <select name="instructor_id">
+      <% for instructor in @instructors %>
+      <option value="<%= instructor.id %>"><%= instructor.name %></option>
+      <% end %>
+    </select>
+  </label>
+
   <br>
 
    <div class="form-el">

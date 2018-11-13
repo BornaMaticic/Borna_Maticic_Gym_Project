@@ -8,6 +8,8 @@
     <th>Session Time</th>
     <th></th>
     <th>Session Availability</th>
+    <th></th>
+    <th>Session Instructor</th>
   </tr>
   <% for session in @sessions %>
   <tr>
@@ -16,6 +18,8 @@
     <td><%= session.session_time %></td>
     <td>| <br></td>
     <td><%= session.remaining_spaces %></td>
+    <td>| <br></td>
+    <td><%= session.session_instructor %></td>
   </tr>
   <% end %>
 </table>

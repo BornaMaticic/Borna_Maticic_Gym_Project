@@ -1,19 +1,33 @@
 require_relative( "../models/session.rb" )
 require_relative( "../models/member.rb" )
 require_relative( "../models/booking.rb" )
+require_relative( "../models/instructor.rb" )
 
 
 Booking.delete_all()
 Session.delete_all()
 Member.delete_all()
+Instructor.delete_all()
 
-session1 = Session.new({ "session_name" => "Zumba", "membership_type" => "Basic", "session_time" => "14:00", "capacity" => "20" })
+
+
+instructor1 = Instructor.new({ "name" => "Zed" })
+instructor1.save()
+
+instructor2 = Instructor.new({ "name" => "Connor" })
+instructor2.save()
+
+instructor3 = Instructor.new({ "name" => "Mathew" })
+instructor3.save()
+
+
+session1 = Session.new({ "session_name" => "Zumba", "membership_type" => "Basic", "session_time" => "14:00", "capacity" => "20", "instructor_id" => instructor1.id })
 session1.save()
 
-session2 = Session.new({ "session_name" => "Insanity", "membership_type" => "Platinum", "session_time" => "18:00", "capacity" => "15" })
+session2 = Session.new({ "session_name" => "Insanity", "membership_type" => "Platinum", "session_time" => "18:00", "capacity" => "15", "instructor_id" => instructor2.id })
 session2.save()
 
-session3 = Session.new({ "session_name" => "Fitness", "membership_type" => "Gold", "session_time" => "10:00", "capacity" => "10" })
+session3 = Session.new({ "session_name" => "Fitness", "membership_type" => "Gold", "session_time" => "10:00", "capacity" => "10", "instructor_id" => instructor3.id })
 session3.save()
 
 

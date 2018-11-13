@@ -1,0 +1,14 @@
+
+
+<h1><%= @instructor.name %></h1>
+
+
+<h3>Sessions:</h3>
+
+
+
+
+<form action="/instructors/<%= @instructor.id %>/edit" method="GET"><input type="submit" value="Edit"></form>
+
+
+<form action="/instructors/<%= @instructor.id %>/delete" method="POST"><input type="submit" value="Delete"></form>
