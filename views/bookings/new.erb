@@ -2,7 +2,7 @@
 
 <form action="/bookings" method="post">
   <label>
-  Select a session:
+  Select a Class:
     <select name="session_id">
       <% for session in @sessions %>
       <option value="<%= session.id %>"><%= session.session_name %></option>

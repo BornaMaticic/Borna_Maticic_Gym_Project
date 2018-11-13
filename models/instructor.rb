@@ -44,7 +44,11 @@ class Instructor
     end
 
     def session_instructor()
-      sql = "SELECT s.session_name FROM sessions s  WHERE instructor_id = $1"
+      sql = "SELECT sessions.session_name
+      FROM sessions
+      INNER JOIN instructors
+      ON sessions.instructor_id = instructors.id
+      WHERE instructors.id = $1"
       values = [@id]
       session_array = SqlRunner.run(sql, values).to_a
       if session_array.length > 0
