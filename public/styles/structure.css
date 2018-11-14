@@ -1,22 +1,22 @@
 body {
-  background: black url('/images/photo.jpg');
+  background: black url('/images/lines.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
-  color: papayawhip;
-  font-family: 'Merriweather', serif;
-  padding: 0px;
-  margin: 0px;
+  color: 00000033;
+  font-family: 'Times New Roman', serif;
+  padding: 1px;
+  margin: 1px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Special Elite', cursive;
+  font-family: 'Times New Roman', cursive;
   margin: 0px;
   padding: 0px;
 }
 
 h1 {
-  font-size: 1.8em;
-  color: darkred;
+  font-size: 2.2em;
+  color: grey;
   margin-bottom: 20px;
 }
 
@@ -32,7 +32,7 @@ a:hover, a:active, a:focus {
 nav {
   padding: 0px;
   margin: 0px;
-  padding-right: 25px;
+  padding-right: 50px;
 }
 
 nav ul li {
@@ -47,7 +47,7 @@ ul {
 }
 
 main {
-  padding: 25px;
+  padding: 75px;
 }
 
 .flex {
@@ -59,6 +59,6 @@ main {
 }
 
 #content {
-  border-left: 1px solid darkred;
-  padding-left: 25px;
+  border-left: 10px solid grey;
+  padding-left: 50px;
 }

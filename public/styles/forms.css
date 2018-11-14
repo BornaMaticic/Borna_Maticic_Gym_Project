@@ -9,8 +9,7 @@ select {
  margin: 15px 0;
  font-size: 0.8em;
  -webkit-appearance: none;
- background: url('/images/photo.jpg') 96% / 15% no-repeat papayawhip;
- font-family: 'Merriweather', serif;
+ font-family: 'Times New Roman', serif;
  border: 1px solid #eee;
  display: block;
 }

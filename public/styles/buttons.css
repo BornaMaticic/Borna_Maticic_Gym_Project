@@ -12,15 +12,15 @@
 }
 
 .btn--danger:hover {
-  background-color: #730000;
+  background-color: #696969;
 }
 
 .btn--action:hover {
-  background-color: #495C27;
+  background-color: #696969;
 }
 
 .btn--action {
-  background-color: darkolivegreen;
+  background-color: black;
 }
 
 .btn--wrapper {

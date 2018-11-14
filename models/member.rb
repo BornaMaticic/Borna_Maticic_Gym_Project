@@ -127,7 +127,7 @@ class Member
       return "Please renew your membership."
     end
   else
-    return "OK"
+    return "Not Yet"
   end
 
 end
