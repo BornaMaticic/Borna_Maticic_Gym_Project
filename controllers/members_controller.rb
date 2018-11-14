@@ -1,5 +1,6 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
+require ('chronic')
 require_relative( '../models/member.rb' )
 also_reload( '../models/*' )
 
@@ -9,6 +10,7 @@ get '/members' do
 end
 
 get '/members/new' do
+  @member = Member.all
   @sessions = Session.all
   erb(:"members/new")
 end

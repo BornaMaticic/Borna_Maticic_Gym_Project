@@ -46,7 +46,7 @@ class Session
         $1, $2, $3, $4, $5
       )
       WHERE id = $6"
-      values = [@session_name, @session_time, @membership_type, @capacity,@instructor_id, @id]
+      values = [@session_name, @session_time, @membership_type, @capacity, @instructor_id, @id]
       SqlRunner.run(sql, values)
     end
 

@@ -29,7 +29,6 @@ end
 
 
 get '/sessions/:id/edit' do
-  @instructor = Instructor.find(params[:id])
   @session = Session.find(params[:id])
   erb(:"sessions/edit")
 end
@@ -38,7 +37,7 @@ end
 post '/sessions/:id' do
   session = Session.new(params)
   session.update
-  redirect to "/sessions/#{params['id']}"
+  redirect to '/sessions'
 end
 
 post '/sessions/:id/delete' do

@@ -7,6 +7,10 @@
     <th>Membership Type</th>
     <th></th>
     <th>Class Attending</th>
+    <th></th>
+    <th>Date Joined</th>
+    <th></th>
+    <th>Renewal of Membership needed</th>
   </tr>
   <% for member in @members %>
   <tr>
@@ -15,6 +19,10 @@
     <td><%= member.membership_type %></td>
     <td>|</td>
     <td><%= member.session_name %></td>
+    <td>|</td>
+    <td><%= member.date_joined %></td>
+    <td>|</td>
+    <td><%= member.time_expired %></td>
   </tr>
   <% end %>
 </table>

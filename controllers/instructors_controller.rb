@@ -35,7 +35,7 @@ end
 post '/instructors/:id' do
   instructor = Instructor.new(params)
   instructor.update
-  redirect to "/instructors/#{params['id']}"
+  redirect to "/instructors"
 end
 
 post '/instructors/:id/delete' do

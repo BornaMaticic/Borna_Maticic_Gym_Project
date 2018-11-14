@@ -17,6 +17,17 @@
       <input type="text" name="capacity" id="capacity" />
     </div>
 <br>
+    <label>
+    Select a Membership Type:
+      <select class="" name="membership_type">
+        <option value="Basic">Basic</option>
+        <option value="Gold">Gold</option>
+        <option value="Platinum">Platinum</option>
+      </select>
+    </label>
+
+
+<br>
     Select Instructor:
     <select name="instructor_id">
       <% for instructor in @instructors %>

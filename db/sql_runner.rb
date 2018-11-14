@@ -1,4 +1,6 @@
 require( 'pg' )
+require ('chronic')
+
 
 class SqlRunner
 

@@ -1,15 +1,17 @@
 require_relative( '../db/sql_runner' )
+require('date')
 
 
 class Member
 
-  attr_reader( :first_name, :last_name, :membership_type, :id )
+  attr_reader( :first_name, :last_name, :membership_type, :date_joined, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
     @membership_type = options['membership_type']
+    @date_joined = options['date_joined']
   end
 
   def save()
@@ -17,17 +19,19 @@ class Member
     (
       first_name,
       last_name,
-      membership_type
+      membership_type,
+      date_joined
     )
     VALUES
     (
-      $1, $2, $3
+      $1, $2, $3, $4
     )
     RETURNING id"
-    values = [@first_name, @last_name, @membership_type]
+    values = [@first_name, @last_name, @membership_type, @date_joined]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
+
 
 
   def update()
@@ -36,13 +40,14 @@ class Member
       (
         first_name,
         last_name,
-        membership_type
+        membership_type,
+        date_joined
       ) =
       (
-        $1, $2, $3
+        $1, $2, $3, $4
       )
-      WHERE id = $4"
-      values = [@first_name, @last_name, @membership_type, @id]
+      WHERE id = $5"
+      values = [@first_name, @last_name, @membership_type, @date_joined, @id]
       SqlRunner.run(sql, values)
     end
 
@@ -61,6 +66,10 @@ class Member
       return "#{@first_name.capitalize} #{@last_name.capitalize}"
     end
 
+    def date_and_time
+     time = Time.now
+     return time
+    end
 
     def session_name()
       sql = "SELECT s.* FROM sessions s INNER JOIN bookings b ON b.session_id = s.id WHERE b.member_id = $1;"
@@ -81,6 +90,18 @@ class Member
       return results.map { |session| Session.new(session) }
     end
 
+
+    def membership_types
+      sql = "SELECT members.membership_type
+      FROM members
+      INNER JOIN sessions
+      ON members.membership_type = sessions.membership_type
+      WHERE sessions.id =$1"
+      values = [@id]
+      result = SqlRunner.run(sql, values)
+      return results.map { |member| Member.new(members)}
+    end
+
   def self.all()
     sql = "SELECT * FROM members"
     results = SqlRunner.run( sql )
@@ -98,6 +119,16 @@ class Member
   def self.delete_all
     sql = "DELETE FROM members"
     SqlRunner.run( sql )
+  end
+
+
+  def time_expired
+    membership_expired = Date.today - 30
+    if membership_expired >= @date_joined.to_i
+      return "Please renew your membership."
+    end
+  else
+    return ""
   end
 
 end

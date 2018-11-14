@@ -25,8 +25,8 @@ class Instructor
   def update()
       sql = "UPDATE instructors
       SET
-      (name) =
-      ($1)
+      name =
+      $1
       WHERE id = $2"
       values = [@name, @id]
       SqlRunner.run(sql, values)
@@ -48,7 +48,7 @@ class Instructor
       FROM sessions
       INNER JOIN instructors
       ON sessions.instructor_id = instructors.id
-      WHERE instructors.id = $1"
+      WHERE instructor_id = $1"
       values = [@id]
       session_array = SqlRunner.run(sql, values).to_a
       if session_array.length > 0
