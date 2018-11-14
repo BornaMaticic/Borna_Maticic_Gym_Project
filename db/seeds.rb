@@ -33,7 +33,7 @@ session3.save()
 
 member1 = Member.new({ "first_name" => "Borna", "last_name" => "Maticic", "membership_type" => "Platinum", "date_joined" => '2018-11-14' })
 member1.save()
-p member1.time_expired
+
 
 member2 = Member.new({ "first_name" => "Aiste", "last_name" => "Maticic", "membership_type" => "Basic", "date_joined" => '2018-11-11'  })
 member2.save()

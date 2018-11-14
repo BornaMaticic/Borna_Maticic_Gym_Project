@@ -4,11 +4,13 @@ td, th {
 
 td {
   padding: 10px 20px 0px 0px;
+  text-shadow: 0 0 8px white;
 }
 
 th {
   padding: 0px 20px 10px 0px;
   border-bottom: 1px solid grey;
+  text-shadow: 0 0 8px white;
 }
 
 table {
