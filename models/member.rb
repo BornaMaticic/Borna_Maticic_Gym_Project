@@ -1,7 +1,6 @@
 require_relative( '../db/sql_runner' )
 require('date')
 
-
 class Member
 
   attr_reader( :first_name, :last_name, :membership_type, :date_joined, :id )
@@ -123,12 +122,12 @@ class Member
 
 
   def time_expired
-    membership_expired = Date.today - 30
-    if membership_expired >= @date_joined.to_i
+    membership_expiry_date = Date.today - 30
+    if membership_expiry_date >= Date.parse(@date_joined)
       return "Please renew your membership."
     end
   else
-    return ""
+    return "OK"
   end
 
 end
