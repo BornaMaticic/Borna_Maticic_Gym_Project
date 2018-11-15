@@ -5,6 +5,7 @@
   color: papayawhip;
   cursor:pointer;
   font-family: 'Times New Roman', cursive;
+  text-shadow: 0 0 8px white;
 }
 
 .btn--danger {

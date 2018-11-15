@@ -12,6 +12,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Times New Roman', cursive;
   margin: 0px;
   padding: 0px;
+
 }
 
 h1 {
@@ -33,6 +34,7 @@ nav {
   padding: 0px;
   margin: 0px;
   padding-right: 50px;
+  text-shadow: 0 0 8px white;
 }
 
 nav ul li {
@@ -61,4 +63,8 @@ main {
 #content {
   border-left: 10px solid grey;
   padding-left: 50px;
+}
+
+footer {
+    display: block;
 }

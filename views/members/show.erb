@@ -1,10 +1,14 @@
 
-<h1>Member ID - <%= @member.id %></h1>
-
 <h1><%= @member.format_name %></h1>
 
-<p>Membership Type <%= @member.membership_type %></p>
 
+
+
+
+<h2>Member ID - <%= @member.id %></h2>
+<h2>Membership Type: <%= @member.membership_type %></h2>
+<br>
+<br>
 
 <form action="/members/<%= @member.id %>/edit" method="GET"><input class="btn btn--action" type="submit" value="Edit"></form>
 

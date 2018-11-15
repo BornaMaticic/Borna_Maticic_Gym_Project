@@ -1,17 +1,17 @@
 
-<h1>Enrol a new member</h1>
+<h1>Add a new member</h1>
 <table style="width:100%">
   <tr>
   <form method="POST" action="/members">
   <div class="form-wrapper">
 
-    <div class="flex">
-      <label for="first_name">First Name:</label>
+    <div class="form-el">
+      <label for="first_name">First Name: </label>
       <input type="text" name="first_name" id="first_name"/>
     </div>
 
     <div class="form-el">
-      <label for="last_name">Last Name:</label>
+      <label for="last_name">Last Name: </label>
       <input type="text" name="last_name" id="last_name"/>
     </div>
 
@@ -19,6 +19,8 @@
       <label for="date_joined">Date Joined:</label>
       <input type="date" name="date_joined" id="date_joined"/>
     </div>
+  </tr>
+</table>
 
   <br>
       <label>
@@ -29,12 +31,11 @@
           <option value="Platinum">Platinum / £35 per month</option>
         </select>
       </label>
-    </tr>
-  </table>
+
 
 
     <div class="form-el">
-      <input class="btn btn--action"  type="submit" value="Enrol a new member"/>
+      <input class="btn btn--action"  type="submit" value="Add a new member"/>
     </div>
 
   </div>

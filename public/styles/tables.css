@@ -1,5 +1,6 @@
 td, th {
   text-align: center;
+  text-shadow: 0 0 8px white;
 }
 
 td {
@@ -15,4 +16,5 @@ th {
 
 table {
   border-collapse: collapse;
+  text-shadow: 0 0 8px white;
 }
