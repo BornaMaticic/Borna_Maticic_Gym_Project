@@ -3,7 +3,8 @@
 ## Introduction:
 
 
-Created for the week 5 solo project of Codeclan (Cohort E26), this program allows for the adding, editing and deleting members in a gym.
+Created for the week 5 project of CodeClan, this program allows for the adding, editing and deleting members in a gym. Software also includes ability to add edit and delete instructors, assign them to a certain class and pair with existing or newly added member. Program also displays capacity of the class and prompts user if the class is full.
+
 ## To Run:
 
 ### Create appropriate db
