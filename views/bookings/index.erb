@@ -9,8 +9,7 @@
 <ul>
   <% for booking in @bookings %>
   <li>
-  <p><%= booking.member.format_name %> is a member of <%= booking.session.session_name %> class </p>
-    <p>
+  <p><%= booking.member.format_name %> is a member of <%= booking.session.session_name %> class 
       <form action="/bookings/<%= booking.id %>/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="delete" />
       </form>
