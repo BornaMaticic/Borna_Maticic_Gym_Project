@@ -1,7 +1,7 @@
 require( 'sinatra' )
-require( 'sinatra/contrib/all' )
+require( 'sinatra/contrib/all' ) if development?
 require_relative( '../models/instructor.rb' )
-also_reload( '../models/*' )
+
 
 get '/instructors' do
   @instructors = Instructor.all()

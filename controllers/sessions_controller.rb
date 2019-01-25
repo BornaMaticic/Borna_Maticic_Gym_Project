@@ -1,7 +1,7 @@
 require( 'sinatra' )
-require( 'sinatra/contrib/all' )
+require( 'sinatra/contrib/all' ) if development?
 require_relative( '../models/session.rb' )
-also_reload( '../models/*' )
+
 
 get '/sessions' do
   @sessions = Session.all()

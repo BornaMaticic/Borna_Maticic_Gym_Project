@@ -1,8 +1,8 @@
 require( 'sinatra' )
-require( 'sinatra/contrib/all' )
+require( 'sinatra/contrib/all' ) if development?
 require ('chronic')
 require_relative( '../models/member.rb' )
-also_reload( '../models/*' )
+
 
 get '/members' do
   @members = Member.all()
