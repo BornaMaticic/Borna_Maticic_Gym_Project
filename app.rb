@@ -1,6 +1,7 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require('rubygems')
+require('pg')
 require_relative('controllers/sessions_controller')
 require_relative('controllers/members_controller')
 require_relative('controllers/bookings_controller')
