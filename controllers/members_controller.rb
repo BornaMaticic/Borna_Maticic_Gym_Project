@@ -1,6 +1,5 @@
 require( 'sinatra' )
 require( 'sinatra/contrib/all' ) if development?
-require ('chronic')
 require_relative( '../models/member.rb' )
 
 
