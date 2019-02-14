@@ -2,10 +2,10 @@
   border:0px none;
   border-radius: 3%;
   padding: 8px 12px;
-  color: papayawhip;
+  color: white;
   cursor:pointer;
   font-family: 'Times New Roman', cursive;
-  text-shadow: 0 0 8px white;
+  text-shadow: 0 0 0.5px white;
 }
 
 .btn--danger {

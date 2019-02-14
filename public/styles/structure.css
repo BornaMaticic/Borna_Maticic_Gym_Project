@@ -1,11 +1,18 @@
 body {
-  background: black url('/images/lines.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  color: 00000033;
   font-family: 'Times New Roman', serif;
-  padding: 1px;
+  padding: 10px;
   margin: 1px;
+  font-size: 1.3em;
+}
+
+.biceps {
+  background-image: url('/images/biceps.png');
+ background-color: white;
+ background-size: 40%;
+ background-position: right;
+ background-repeat: no-repeat;
+  background-attachment: fixed;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -16,13 +23,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2.2em;
+  font-size: 2.8em;
   color: grey;
   margin-bottom: 20px;
 }
 
 a, a:link, a:visited {
-  color: #a2937e;
+  color: #babbc1;
   text-decoration: none;
 }
 
@@ -33,27 +40,49 @@ a:hover, a:active, a:focus {
 nav {
   padding: 0px;
   margin: 0px;
-  padding-right: 50px;
-  text-shadow: 0 0 8px white;
+  padding-right: px;
+  text-transform: uppercase;
+  text-emphasis-color: white;
+
 }
 
-nav ul li {
-  margin-bottom: 15px;
-  text-transform: uppercase;
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+li{
+  float: left;
 }
 
 ul {
-  padding: 0px;
-  margin: 0px;
   list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #27282b;
+    position: fixed;
+  top: 0;
+  width: 66%;
+}
+.active {
+  background-color: #4CAF50;
 }
 
 main {
-  padding: 75px;
+  padding: px;
 }
 
 .flex {
   display: flex;
+
 }
 
 .flex--row {
@@ -61,8 +90,9 @@ main {
 }
 
 #content {
-  border-left: 10px solid grey;
-  padding-left: 50px;
+ padding-top: 100px;
+  padding-left: 100px;
+  padding-bottom: 500px;
 }
 
 footer {

@@ -1,42 +1,20 @@
 
 <h1>Add a new member</h1>
-<table style="width:100%">
-  <tr>
-  <form method="POST" action="/members">
-  <div class="form-wrapper">
-
-    <div class="form-el">
+  <form class="add_member"method="POST" action="/members">
       <label for="first_name">First Name: </label>
       <input type="text" name="first_name" id="first_name"/>
-    </div>
-
-    <div class="form-el">
       <label for="last_name">Last Name: </label>
       <input type="text" name="last_name" id="last_name"/>
-    </div>
-
-    <div class="form-el">
       <label for="date_joined">Date Joined:</label>
       <input type="date" name="date_joined" id="date_joined"/>
-    </div>
-  </tr>
-</table>
-
-  <br>
-      <label>
+    </form>
+    <br>
+      <form>
       Select a Membership:
         <select class="" name="membership_type">
           <option value="Basic">Basic / £18 per month </option>
           <option value="Gold">Gold / £25 per month</option>
           <option value="Platinum">Platinum / £35 per month</option>
         </select>
-      </label>
-
-
-
-    <div class="form-el">
       <input class="btn btn--action"  type="submit" value="Add a new member"/>
-    </div>
-
-  </div>
 </form>
