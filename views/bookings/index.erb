@@ -1,19 +1,80 @@
-<h1>Bookings</h1>
+<h1>Current Bookings</h1>
 
+<style>
+.current_bookings {
+  font-family: 'Times New Roman', serif;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
 
+.current_bookings td, .current_bookings th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
 
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/bookings/new">New booking</a>
-</p>
+.current_bookings tr:nth-child(even){background-color: #f2f2f2;}
 
+.current_bookings tr:hover {background-color: #ddd;}
 
+.current_bookings th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #808080;
+  color: white;
+}
+a[type=submit] {
+  width: 40%;
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+a[type=submit]:hover {
+  background-color: #808080;
+}
+input[id=del] {
+  width: 47%;
+  background-color: #e52756;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[id=del]:hover {
+  background-color: #808080;
+}
+</style>
+
+<table class="current_bookings">
+<tr>
+  <th>Member name</th>
+  <th>Booked for class</th>
+  <th>Option to remove from class</th>
+</tr>
   <% for booking in @bookings %>
-  
-  <p><%= booking.member.format_name %> is a member of <%= booking.session.session_name %> class </p>
-    <p>
-      <form action="/bookings/<%= booking.id %>/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="delete" />
+  <tr>
+  <td><%= booking.member.format_name %></td>
+  <td><%= booking.session.session_name %></td>
+  <td>
+<form action="/bookings/<%= booking.id %>/delete" method="POST">
+        <input class="btn btn--danger" id="del" type="submit" value="remove" />
       </form>
+    </td>
+      </tr>
     </p>
-
   <% end %>
+</table>
+<br>
+<br>
+  <p class="btn--wrapper">
+    <a class="btn btn--action" type="submit" href="/bookings/new"> Create a NEW BOOKING</a>
+  </p>

@@ -1,22 +1,53 @@
 <h1>Create a new Class</h1>
+
+
+<style>
+input[type=text], select {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 80%;
+  background-color: #27282b;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #808080;
+}
+
+aside {
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+</style>
+
+<aside>
 <form method="POST" action="/sessions">
-  <div class="form-wrapper">
-
-
-    <div class="form-el">
       <label for="session_name">Class Name:</label>
-      <input type="text" name="session_name" id="session_name"/>
-    </div>
-
-    <div class="form-el">
+      <br>
+      <input type="text" name="session_name" id="session_name" placeholder="Name of the class..">
+      <br>
       <label for="session_time">Class Time:</label>
-      <input type="text" name="session_time" id="session_time"/>
-    </div>
-
-    <div class="form-el">
+      <br>
+      <input type="text" name="session_time" id="session_time" placeholder="Time of the class..">
+      <br>
       <label for="capacity">Class Capacity:</label>
-      <input type="text" name="capacity" id="capacity" />
-    </div>
+      <br>
+      <input type="text" name="capacity" id="capacity" placeholder="Capacity of the class.." >
 <br>
     <label>
     Select a Membership Type:
@@ -26,22 +57,16 @@
         <option value="Platinum">Platinum</option>
       </select>
     </label>
-
-
-
+    <br>
     Select Instructor:
+    <br>
     <select name="instructor_id">
       <% for instructor in @instructors %>
       <option value="<%= instructor.id %>"><%= instructor.name %></option>
       <% end %>
     </select>
   </label>
-
   <br>
-
-   <div class="form-el">
-      <input class="btn btn--action" type="submit" value="Create Class"/>
-    </div>
-
-  </div>
+      <input class="btn btn--action" type="submit" value="Create a Class"/>
 </form>
+</aside>

@@ -1,15 +1,57 @@
 
+<style>
+
+
+input[type=submit] {
+  width: 50%;
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #808080;
+}
+
+input[id=dele] {
+  width: 50%;
+  background-color: #e52756;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[id=dele]:hover {
+  background-color: #808080;
+}
+
+aside {
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+</style>
+
 
 <h1><%= @instructor.name %> (Instructor)</h1>
-
-
-<h2>Assigned to Class:</h2>
-<br>
-<h3><%= @instructor.session_instructor %></h3>
+<aside>
+<h2>Assigned to Class: <%= @instructor.session_instructor %></h2>
 
 <br>
 <br>
-<form action="/instructors/<%= @instructor.id %>/edit" method="GET"><input class="btn btn--action" type="submit" value="Edit"></form>
+<form action="/instructors/<%= @instructor.id %>/edit" method="GET">
+  <input class="btn btn--action" type="submit" value="Edit">
+</form>
 <br>
-
-<form action="/instructors/<%= @instructor.id %>/delete" method="POST"><input class="btn btn--action" type="submit" value="Delete"></form>
+<form action="/instructors/<%= @instructor.id %>/delete" method="POST">
+  <input class="btn btn--action" id="dele" type="submit" value="Delete">
+</form>
+</aside>

@@ -12,7 +12,8 @@ select {
  font-family: 'Times New Roman', serif;
  border: 1px solid #eee;
  display: block;
- 
+ text-transform: uppercase;
+
 }
 
 :focus {

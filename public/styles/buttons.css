@@ -11,6 +11,7 @@
   border: none;
   border-radius: 15px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+   text-transform: uppercase;
 }
 .btn:hover {background-color: #3e8e41}
 
@@ -18,24 +19,10 @@
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
-}
 
-.btn--danger {
-  background-color: grey;
-}
-
-.btn--danger:hover {
-  background-color: #696969;
-}
-
-.btn--action:hover {
-  background-color: #696969;
-}
-
-.btn--action {
-  background-color: black;
 }
 
 .btn--wrapper {
   margin: 0px 0px 30px 0px;
+   text-transform: uppercase;
 }

@@ -1,20 +1,60 @@
 <h1>Instructors</h1>
 <br>
-<table>
+
+<style>
+.instructors {
+  font-family: 'Times New Roman', serif;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.instructors td, .instructors th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+a[type=submit] {
+  width: 70%;
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+a[type=submit]:hover {
+  background-color: #808080;
+}
+
+.instructors tr:nth-child(even){background-color: #f2f2f2;}
+
+.instructors tr:hover {background-color: #ddd;}
+
+.instructors th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #808080;
+  color: white;
+}
+</style>
+
+<table class="instructors">
   <tr>
-    <th>Name</th>
-    <th></th>
-    <th>Class instructor</th>
+    <th>Instructor Name</th>
+    <th>Class Attending</th>
   </tr>
   <% for instructor in @instructors %>
   <tr>
     <td><a href="/instructors/<%= instructor.id %>"><%= instructor.name %></a></td>
-    <td>|</td>
   <td><%= instructor.session_instructor %></td>
   </tr>
   <% end %>
 </table>
 <br>
+<br>
 <p class="btn--wrapper">
-  <a class="btn btn--action" href="/instructors/new">Add new instructor</a>
+  <a class="btn btn--action" type="submit" href="/instructors/new">ADD A NEW INSTRUCTOR</a>
 </p>

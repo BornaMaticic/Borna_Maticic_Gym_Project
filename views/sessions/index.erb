@@ -1,31 +1,62 @@
 <h1>Classes</h1>
-<br>
+<style>
+.classes {
+  font-family: 'Times New Roman', serif;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
 
-<table>
+.classes td, .classes th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+a[id=createnew] {
+  width: 40%;
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+a[id=createnew]:hover {
+  background-color: #808080;
+}
+
+.classes tr:nth-child(even){background-color: #f2f2f2;}
+
+.classes tr:hover {background-color: #ddd;}
+
+.classes th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #808080;
+  color: white;
+}
+</style>
+
+<table class="classes">
   <tr>
     <th>Name</th>
-    <th></th>
     <th>Class Time</th>
-    <th></th>
     <th>Class Availability</th>
-    <th></th>
     <th>Class Instructor</th>
   </tr>
   <% for session in @sessions %>
   <tr>
     <td><a href="/sessions/<%= session.id %>"><%= session.session_name %></a></td>
-    <td>|</td>
     <td><%= session.session_time %></td>
-    <td>| <br></td>
     <td><%= session.remaining_spaces %></td>
-    <td>| <br></td>
     <td><%= session.session_instructor %></td>
   </tr>
   <% end %>
 </table>
 <br>
 <br>
-
 <p class="btn--wrapper">
-  <a class="btn btn--action" href="/sessions/new">Create new Class</a>
+  <a class="btn btn--action" id="createnew" href="/sessions/new">Create new Class</a>
 </p>

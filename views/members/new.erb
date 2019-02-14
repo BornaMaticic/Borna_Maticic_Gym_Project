@@ -7,9 +7,11 @@ input[type=text], select {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid green;
   border-radius: 4px;
   box-sizing: border-box;
+
+
 }
 
 input[type=date], select {
@@ -17,14 +19,14 @@ input[type=date], select {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid green;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
 input[type=submit] {
   width: 60%;
-  background-color: #27282b;
+  background-color: green;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -48,19 +50,19 @@ aside {
  <aside>
   <form method="POST" action="/members">
       <label for="first_name">First Name:  </label>
-      <br>
+       <br>
        <input type="text" name="first_name" id="first_name" placeholder="Your name..">
        <br>
       <label for="last_name">Last Name:  </label>
-      <br>
+       <br>
        <input type="text" name="last_name" id="last_name" placeholder="Your last name..">
        <br>
       <label for="date_joined">Date Joined:</label>
-      <br>
+       <br>
        <input type="date" name="date_joined" id="date_joined">
        <br>
       <label>Membership:</label>
-      <br>
+       <br>
         <select class="" name="membership_type">
           <option value="Basic">Basic / £18 per month </option>
           <option value="Gold">Gold / £25 per month</option>

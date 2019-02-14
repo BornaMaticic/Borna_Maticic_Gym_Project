@@ -1,27 +1,61 @@
-<h2>Edit <%= @session.session_name %></h2>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid green;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=date], select {
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid green;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #808080;
+}
+
+aside {
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+</style>
+
+<h1>Edit class</h1>
+<aside>
 <form method="POST" action="/sessions/<%= @session.id %>">
-  <div class="form-wrapper">
-
-    <div class="form-el">
       <label for="session_name">Class Name:</label>
-      <input type="text" name="session_name" id="session_name" value="<%= @session.session_name %>"/>
-    </div>
-
-    <div class="form-el">
+      <br>
+      <input type="text" name="session_name" id="session_name" value="<%= @session.session_name %>">
+      <br>
       <label for="session_time">Class Time:</label>
-      <input type="text" name="session_time" id="session_time" value="<%= @session.session_time%>"/>
-    </div>
-
-    <div class="form-el">
+      <br>
+      <input type="text" name="session_time" id="session_time" value="<%= @session.session_time%>">
+      <br>
       <label for="capacity">Class Capacity:</label>
-      <input type="text" name="capacity" id="capacity" value="<%= @session.capacity%>"/>
-    </div>
-
-
-
-    <div class="form-el">
-      <input class="btn btn--action" type="submit" value="Edit class"/>
-    </div>
-
-  </div>
+      <br>
+      <input type="text" name="capacity" id="capacity" value="<%= @session.capacity%>">
+      <br>
+      <input class="btn btn--action" type="submit" value="Save">
 </form>
+</aside>

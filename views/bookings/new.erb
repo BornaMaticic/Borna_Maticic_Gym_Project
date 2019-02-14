@@ -1,28 +1,56 @@
-<h1>Book now</h1>
+<h1>Book a new session</h1>
 
+<style>
+input[type=text], select {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid green;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 90%;
+  background-color: green;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #808080;
+}
+
+aside {
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+</style>
+<aside>
 <form action="/bookings" method="post">
-  <label>
-
-    <label>
       Select a member:
+      <br>
       <select name="member_id">
         <% for member in @members %>
         <option value="<%= member.id %>"><%= member.format_name %></option>
         <% end %>
       </select>
-    </label>
-
-
-
+      <br>
   Select a Class:
+  <br>
     <select name="session_id">
       <% for session in @sessions %>
       <option value="<%= session.id %>"><%= session.session_name %></option>
       <% end %>
     </select>
-  </label>
-
-
-
-  <input class="btn btn--action" type='submit' value="Book">
+    <br>
+  <input class="btn btn--action" type='submit' value="Book session">
 </form>
+</aside>

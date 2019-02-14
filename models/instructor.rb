@@ -55,7 +55,7 @@ class Instructor
         session = session_array[0]
         return session ['session_name']
       else
-        return "No session booked."
+        return "No classes booked."
       end
     end
 
