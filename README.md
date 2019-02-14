@@ -69,3 +69,12 @@ A local gym has asked you to build a piece of software to help them to manage me
 
 - Classes could have a maximum capacity, and users can only be added while there is space remaining.
 - The gym could be able to give its members Premium or Standard membership. Standard members can only be signed up for classes during off-peak hours.
+
+### Screenshots of actual app
+##
+
+![My image](https://github.com/BornaMaticic/Gym-Management-Project/blob/master/public/images/Screenshot%202019-02-14%20at%2019.19.52.png)
+##
+
+![My image](https://github.com/BornaMaticic/Gym-Management-Project/blob/master/public/images/Screenshot%202019-02-14%20at%2019.20.18.png)
+
