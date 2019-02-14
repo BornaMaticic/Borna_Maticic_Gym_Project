@@ -1,11 +1,12 @@
 td, th {
   text-align: center;
-  text-shadow: 0 0 8px white;
+  text-shadow: 0 0 1px white;
+
 }
 
 td {
   padding: 10px 20px 0px 0px;
-  text-shadow: 0 0 8px white;
+  text-shadow: 0 0 1px white;
 }
 
 th {
@@ -16,5 +17,5 @@ th {
 
 table {
   border-collapse: collapse;
-  text-shadow: 0 0 8px white;
+  text-shadow: 0 0 1px white;
 }

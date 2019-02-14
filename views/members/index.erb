@@ -1,27 +1,44 @@
 <h1>Members</h1>
+<style>
+.members {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
 
-<table>
+.members td, .members th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.members tr:nth-child(even){background-color: #f2f2f2;}
+
+.members tr:hover {background-color: #ddd;}
+
+.members th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #27282b;
+  color: white;
+}
+</style>
+
+<table class="members">
   <tr>
     <th>Full Name</th>
-    <th></th>
     <th>Membership Type</th>
-    <th></th>
     <th>Class Attending</th>
-    <th></th>
     <th>Date Joined</th>
-    <th></th>
     <th>Renewal of Membership needed</th>
   </tr>
   <% for member in @members %>
   <tr>
     <td><a href="/members/<%= member.id %>"><%= member.format_name %></a></td>
-    <td>|</td>
     <td><%= member.membership_type %></td>
-    <td>|</td>
     <td><%= member.session_name %></td>
-    <td>|</td>
     <td><%= member.date_joined %></td>
-    <td>|</td>
     <td><%= member.time_expired %></td>
   </tr>
   <% end %>

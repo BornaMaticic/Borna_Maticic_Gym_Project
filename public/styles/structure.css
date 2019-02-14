@@ -3,6 +3,7 @@ body {
   padding: 10px;
   margin: 1px;
   font-size: 1.3em;
+
 }
 
 .biceps {
@@ -13,12 +14,16 @@ body {
  background-repeat: no-repeat;
   background-attachment: fixed;
 
+
+
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Times New Roman', cursive;
   margin: 0px;
   padding: 0px;
+  color: white;
+    text-shadow: 2px 2px 4px #000000;
 
 }
 
@@ -26,6 +31,7 @@ h1 {
   font-size: 2.8em;
   color: grey;
   margin-bottom: 20px;
+
 }
 
 a, a:link, a:visited {
@@ -43,6 +49,8 @@ nav {
   padding-right: px;
   text-transform: uppercase;
   text-emphasis-color: white;
+  color: white;
+    text-shadow: 2px 2px 4px #000000;
 
 }
 
@@ -52,6 +60,8 @@ li a {
   text-align: center;
   padding: 20px 20px;
   text-decoration: none;
+
+
 }
 
 li a:hover {
@@ -72,6 +82,7 @@ ul {
   top: 0;
   width: 66%;
 }
+
 .active {
   background-color: #4CAF50;
 }
@@ -91,7 +102,7 @@ main {
 
 #content {
  padding-top: 100px;
-  padding-left: 100px;
+  padding-left: 10px;
   padding-bottom: 500px;
 }
 
