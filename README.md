@@ -1,4 +1,4 @@
-# Gym-Management-Project
+# Gym Management Project
 
 ## Introduction:
 
